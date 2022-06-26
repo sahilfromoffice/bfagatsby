@@ -1,0 +1,224 @@
+.headerWrapper {
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99900;
+  width: 100%;
+  transition: background, height 0.4s ease-out;
+}
+
+.headerWrapper.scrolled {
+  /* background: rgba(0, 0, 0, 0.893); */
+  background: var(--primary-5);
+  height: 8vh;
+}
+
+.logo {
+  height: 90px;
+  width: auto;
+  padding: 0px 15px;
+  transition: height 0.2s ease-out;
+}
+.logo.scrolled {
+  height: 70px;
+}
+
+.navWrapper {
+  padding: 0 20px;
+  display: flex;
+}
+.navMenuItem {
+  position: relative;
+  padding-top: 6px;
+}
+
+.navMenuSubItemList {
+  display: none;
+  position: absolute;
+  top : auto;
+  right: 0;
+}
+
+.subNavlink {
+  padding: 8px 25px;
+  text-decoration: none;
+  background-color: #041127;
+  color: white;
+  font-weight: 400;
+  font-size: 0.8rem;
+  transition: color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    border 0.7s linear, font-size 0.1s ease-out;
+  border-bottom: 1px solid tomato;
+  border-radius: 5px 5px 10px 10px;
+}
+
+.subNavlink:hover {
+  border-bottom: 1px solid rgb(147, 79, 16);
+}
+
+.navMenuItem:hover .navMenuSubItemList {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+ 
+.navMenuItem:hover {
+  background-color: rgba(0, 0, 0, 0.05) ;
+  border-radius: 5px;
+}
+
+.navLink {
+  padding: 5px 5px;
+  height: 100%;
+  margin: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  transition: color 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    border 0.7s linear, font-size 0.1s ease-out;
+  border: 2px solid transparent;
+ 
+}
+
+.navLink.active {
+  color: var(--secondary);
+  border-bottom: 2px groove orange;
+}
+
+.navLink:hover {
+  border-bottom: 2px solid orange;
+}
+
+.navLink.scrolled {
+  font-size: 1rem;
+  transition: font-size 0.2s ease-out;
+}
+
+.menuBtn {
+  display: none;
+}
+
+.logoWrapper {
+  height: 100%;
+  padding: 0;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .headerWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 12%;
+    top: 0;
+  }
+
+  .headerWrapper.scrolled {
+    /* background: rgba(0, 0, 0, 0.768); */
+    height: 12%;
+  }
+
+  .headerWrapper.menuActive {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background: var(--primary-5) !important;
+    height: 100%;
+  }
+
+  .menuBtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .logoWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .logoWrapper.menuActive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .logoWrapper button {
+    background: transparent;
+    color: white;
+    width: fit-content;
+    margin-right: 10px !important;
+  }
+  .logoWrapper.menuActive button {
+    background: transparent;
+    color: white;
+    width: 100%;
+  }
+
+  .logo {
+    height: 80px;
+    width: auto;
+    margin-top: 10px;
+  }
+
+  .logo.menuActive,
+  .logo.menuActive.scrolled {
+    height: 200px;
+    width: auto;
+  }
+
+  .logo.scrolled {
+    height: 60px;
+  }
+
+  .navWrapper {
+    /* height: 0; */
+    /* display: none; */
+    opacity: 0;
+    height: 0;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .navWrapper.menuActive {
+    /* padding: 10px 20px; */
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20%;
+    width: 100%;
+    align-items: center;
+    transition: opacity, height 0.5s ease-out;
+    height: 100%;
+  }
+
+  .navLink,
+  .navLink.scrolled {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 1.5rem;
+    border-bottom: #ffffff40 1px solid;
+  }
+  .navLink.active {
+    color: var(--secondary);
+  }
+}
