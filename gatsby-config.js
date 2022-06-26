@@ -32,17 +32,17 @@ module.exports = {
     //     spaceId: "02inwpaulaqh",
     //   },
     // },
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        url: `https://barodafootballacademy.co.in/cms/graphql`,
-      },
-      schema: {
-        perPage: 1000,
-        requestConcurrency: 5,
-        circularQueryLimit: 2,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-wordpress`,
+    //   options: {
+    //     url: `https://barodafootballacademy.co.in/cms/graphql`,
+    //   },
+    //   schema: {
+    //     perPage: 1000,
+    //     requestConcurrency: 5,
+    //     circularQueryLimit: 2,
+    //   },
+    // },
     // {
     //   resolve: "gatsby-source-graphql",
     //   options: {
